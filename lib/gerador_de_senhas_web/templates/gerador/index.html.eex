@@ -1,0 +1,12 @@
+<h1>Gerador de senhas</h1>
+
+<div>
+<%= form_for @conn, Routes.gerador_path(@conn, :index), fn f -> %>
+  <%= text_input f, :n, placeholder: "Número de caracteres (entre 5 e 50)" %>
+  <input type="checkbox" name=opcoes[] value="min" checked><label for="min">Minúsculas</label>
+  <input type="checkbox" name=opcoes[] value="mai"><label for="mai">Maiúsculas</label>
+  <input type="checkbox" name=opcoes[] value="num"><label for="num">Números</label>
+  <input type="checkbox" name=opcoes[] value="sim"><label for="sim">Símbolos</label>
+  <%= submit "Gerar", class: "btn btn-primary" %>
+<% end %>
+</div>
